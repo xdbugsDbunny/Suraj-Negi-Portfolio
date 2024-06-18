@@ -9,9 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const form = useRef();
-  const SERVICE_ID = process.env.REACT_APP_EMAIL_SERVICE_ID;
-  const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
-  const USER_ID = process.env.REACT_APP_USER_ID;
+  const SERVICE_ID = process.env.EMAIL_SERVICE_ID;
+  const TEMPLATE_ID = process.env.TEMPLATE_ID;
+  const USER_ID = process.env.USER_ID;
   const sendEmail = (e) => {
     e.preventDefault();
 
