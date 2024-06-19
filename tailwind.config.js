@@ -19,12 +19,12 @@ module.exports = {
         secondary: "#393A47",
         accent: "#F13024",
       },
-      backgroundImage: {
-        explosion: 'url("./src/assets/bgexplosion.png")',
-        circles: 'url("./src/assets/bgcircles.png")',
-        circleStar: 'url("./src/assets/circlestar.svg")',
-        site: 'url("./src/assets/sitebg.svg")',
-      },
+      // backgroundImage: {
+      //   explosion: 'url("./src/assets/bgexplosion.png")',
+      //   circles: 'url("./src/assets/bgcircles.png")',
+      //   circleStar: 'url("./src/assets/circlestar.svg")',
+      //   site: 'url("./src/assets/sitebg.svg")',
+      // },
       animation: {
         "spin-slow": "spin 6s linear infinite",
       },

@@ -4,6 +4,7 @@ import ProjectsBtn from "../Components/ProjectsBtn";
 import Avatar from "../Components/Avatar";
 import { motion } from "framer-motion";
 import { fadeIn } from "../Utils/variants";
+import explosion from "../assets/explosion.png";
 
 const Home = () => {
   return (
@@ -18,8 +19,8 @@ const Home = () => {
             className="h1 text-md sm:text-[35px] mt-10 sm:mt-0"
             // style={{paddingTop:'6.5rem'}}
           >
-             Hi, I&apos;m Suraj <br />
-             <span className="text-accent">MERN Stack Developer</span>
+            Hi, I&apos;m Suraj <br />
+            <span className="text-accent">MERN Stack Developer</span>
           </motion.h1>
           <motion.p
             variants={fadeIn("down", 0.3)}
@@ -28,7 +29,11 @@ const Home = () => {
             exit="hidden"
             className="xl:max-w-xl mx-auto xl:mx-0 xl:mb-16 sm:text-sm text-[12px]"
           >
-            Hi, I'm Suraj Singh Negi, a passionate MERN Stack Developer skilled in both front-end and back-end technologies. With hands-on experience from my internship and personal projects, I excel in creating dynamic and responsive web applications. In 2024, I'm excited to expand my skills with Next.js, TypeScript, and Firebase.
+            Hi, I'm Suraj Singh Negi, a passionate MERN Stack Developer skilled
+            in both front-end and back-end technologies. With hands-on
+            experience from my internship and personal projects, I excel in
+            creating dynamic and responsive web applications. In 2024, I'm
+            excited to expand my skills with Next.js, TypeScript, and Firebase.
           </motion.p>
           <div className=" flex justify-center xl:hidden relative ">
             <ProjectsBtn />
@@ -47,9 +52,12 @@ const Home = () => {
       <div className=" w-full h-full absolute right-0 bottom-0 ">
         {/*w-[1200px] */}
 
-        <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 "></div>
+        <div
+          className="bg-none xl:block xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 "
+          style={{ backgroundImage: `url(${explosion})` }}
+        ></div>
         <div>
-          <ParticlesContainer/>
+          <ParticlesContainer />
         </div>
         <motion.div
           variants={fadeIn("up", 0.5)}

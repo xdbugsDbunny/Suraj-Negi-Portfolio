@@ -26,11 +26,11 @@ const Contact = () => {
       });
       form.current.reset();
     } catch (error) {
+      setSending(false);
       console.error("Failed to send email:", error);
       toast.error("Failed to send email.", {
         position: "top-center",
       });
-      setSending(false);
     }
   };
 
