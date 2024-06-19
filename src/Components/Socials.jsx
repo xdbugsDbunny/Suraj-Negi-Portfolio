@@ -16,11 +16,7 @@ const Socials = () => {
         {" "}
         <RiInstagramLine />{" "}
       </Link>
-      <Link to={""} className="hover:text-accent transition-all duration-300 hover:scale-150" >
-        {" "}
-        <RiFacebookLine />{" "}
-      </Link>
-      <Link to={""} className="hover:text-accent transition-all duration-300 hover:scale-150 ">
+      <Link to={"https://x.com/negi_negisuraj"} className="hover:text-accent transition-all duration-300 hover:scale-150 ">
         {" "}
         <RiWhatsappLine />{" "}
       </Link>

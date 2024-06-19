@@ -1,8 +1,9 @@
 import React from "react";
 import { FaLinkedin, FaInstagram, FaWhatsapp, FaGithub } from "react-icons/fa";
-import { RiTwitterXLine, RiMetaLine  } from "react-icons/ri";
+import { RiTwitterXLine, RiMetaLine } from "react-icons/ri";
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LeftSideBar = () => {
   return (
@@ -30,9 +31,8 @@ const LeftSideBar = () => {
           initial={{ scale: 1, x: 0 }}
           whileHover={{ scale: 1.5 }}
           transition={{ ease: [0.34, 1.56, 0.64, 1], duration: 1 }}
-          href="#"
+          href="https://wa.me/918077320338"
           className="social-link"
-          onClick={() => toast.info("WhatsApp me at 8077320338")}
         >
           <FaWhatsapp size={"2vw"} color="#29A61A" />
         </motion.a>
@@ -58,13 +58,14 @@ const LeftSideBar = () => {
           initial={{ scale: 1, x: 0 }}
           whileHover={{ scale: 1.5 }}
           transition={{ ease: [0.34, 1.56, 0.64, 1], duration: 1 }}
-          href="#"
+          // href="#"
           className="social-link"
-          onClick={() => toast.info("Sorry I dont Use Meta")}
+          onClick={() => toast.info("I'm sorry, but I don't use Meta.")}
         >
           <RiMetaLine size={"2vw"} color="#0081FB" />
         </motion.a>
       </div>
+      <ToastContainer />
     </div>
   );
 };

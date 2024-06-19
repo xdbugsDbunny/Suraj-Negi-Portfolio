@@ -20,10 +20,10 @@ module.exports = {
         accent: "#F13024",
       },
       backgroundImage: {
-        explosion: 'url("./src/assets/bg-explosion.png")',
-        circles: 'url("./src/assets/bg-circles.png")',
-        circleStar: 'url("./src/assets/circle-star.svg")',
-        site: 'url("./src/assets/site-bg.svg")',
+        explosion: 'url("./src/assets/bgexplosion.png")',
+        circles: 'url("./src/assets/bgcircles.png")',
+        circleStar: 'url("./src/assets/circlestar.svg")',
+        site: 'url("./src/assets/sitebg.svg")',
       },
       animation: {
         "spin-slow": "spin 6s linear infinite",

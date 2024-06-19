@@ -11,6 +11,11 @@ import Avatar from "../Components/Avatar";
 import Circles from "../Components/Circles";
 import { fadeIn } from "../Utils/variants";
 import CountUp from "react-countup";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper";
 
 const aboutData = [
   {
@@ -35,10 +40,10 @@ const aboutData = [
           <FaReact color="#38BDF8" />,
         ],
       },
-      // {
-      //   title: "Package Manager",
-      //   icons: [<FaNpm color="#CB0000" />],
-      // },
+      {
+        title: "Package Manager",
+        icons: [<FaNpm color="#CB0000" />],
+      },
       {
         title: "Database",
         icons: [<SiMysql color="#3E6E93" />, <SiMongodb color="#82E0AA" />],
@@ -64,6 +69,22 @@ const aboutData = [
           "Demonstrated proficiency in API development and bug resolution, enhancing project functionality.",
         ],
       },
+      {
+        title: "Doctor Appointment App (May 2024 - June 2024)",
+        stage: [
+          "Developed a seamless appointment booking system with user-friendly interface.",
+          "Designed comprehensive doctor profiles, including specialties and patient reviews.",
+          "Ensured secure and confidential management of patient data.",
+        ],
+      },
+      {
+        title: "React Chat App with Firebase (June 2024 - Present)",
+        stage: [
+          "Built a real-time chat application using React and Firebase.",
+          "Focused on learning advanced React concepts and Firebase integration.",
+          "Implemented features for sending messages, user authentication, and data persistence.",
+        ],
+      },
     ],
   },
   {
@@ -83,16 +104,6 @@ const aboutData = [
         stage: "Institute of Technology and Management - [ITM], Dehradun",
         score: "CGPA - 6.0/10",
       },
-      // {
-      //   title: "Class - 12",
-      //   stage: "St. Kabeer Academy, Dehradun (2015)",
-      //   score: "Percentage - 56%",
-      // },
-      // {
-      //   title: "Class - 10",
-      //   stage: "Army Public School, Clement Town (2013)",
-      //   score: "CGPA 7.2/10",
-      // },
     ],
   },
 ];
@@ -196,39 +207,54 @@ const About = () => {
             ))}
           </div>
           <div className="py-2 xl:py-6 flex flex-col gap-y-2 xl:gap-y-4 items-start xl:items-start">
-            {aboutData[index].info.map((item, itemIndex) => (
-              <div
-                key={itemIndex}
-                className={`flex-1 flex flex-row md:flex-row max-w-max gap-x-2 items-start text-white/60`}
+            {index === 1 ? (
+              <Swiper
+                modules={[Pagination]}
+                pagination={{ clickable: true }}
+                spaceBetween={50}
+                slidesPerView={1}
+                className=" h-full w-full xl:w-[600px] sm:h-[275px]"
               >
-                <div className="animated-border border-b-2 border-b-slate-300 border-l-2 px-2 ">
-                  <div className=" text-md md:text-3xl">{item.title} -</div>
-                  {Array.isArray(item.stage) ? (
-                    <ul className="mt-1 ml-5 ">
-                      {item.stage.map((point, pointIndex) => (
-                        <li
-                          key={pointIndex}
-                          className="leading-snug md:leading-normal list-disc mb-2 "
-                        >
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="leading-snug md:leading-normal mt-2">
+                {aboutData[index].info.map((item, itemIndex) => (
+                  <SwiperSlide key={itemIndex}>
+                    <div className="animated-border border-b-2 border-b-slate-300 border-l-2 px-2 ">
+                      <div className=" text-md md:text-3xl">{item.title} -</div>
+                      <ul className="mt-1 ml-5  ">
+                        {item.stage.map((point, pointIndex) => (
+                          <li
+                            key={pointIndex}
+                            className="leading-snug md:leading-normal list-disc mb-2 text-white/60"
+                          >
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              aboutData[index].info.map((item, itemIndex) => (
+                <div
+                  key={itemIndex}
+                  className={`flex-1 flex flex-row md:flex-row max-w-max gap-x-2 items-start`}
+                >
+                  <div className="border-b-2 border-b-slate-300 border-l-2 px-2 ">
+                    <div className=" text-md md:text-3xl">{item.title} -</div>
+                    <p className="leading-snug md:leading-normal mt-2  text-white/60">
                       {item.stage}
                     </p>
-                  )}
+                  </div>
+                  <div className="flex flex-row gap-x-4">
+                    {item.icons?.map((icon, iconIndex) => (
+                      <div key={iconIndex} className="text-4xl">
+                        {icon}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex flex-row gap-x-4">
-                  {item.icons?.map((icon, iconIndex) => (
-                    <div key={iconIndex} className="text-4xl">
-                      {icon}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </motion.div>
       </div>
