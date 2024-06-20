@@ -8,7 +8,7 @@ import "../App.css";
 
 const Layout = ({ children }) => {
   return (
-    <div className="page bg text-white font-sora relative">
+    <div className="page bg text-white bg-cover bg-no-repeat font-sora relative">
       <LeftSideBar />
       <TopLeftImg />
       <NavBar />

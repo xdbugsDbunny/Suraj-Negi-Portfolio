@@ -1,5 +1,3 @@
 .bg {
   background-image: url("./assets/site.svg");
-  object-fit: cover;
-  background-repeat: no-repeat;
 }
